@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "This is assignment 2. I will be developing server and database using Nodejs, Express and MongoDB Atlas. This program is developed by prabin silwal. Student ID:12195019",
   "main": "server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Prabin Silwal",
   "license": "ISC",
