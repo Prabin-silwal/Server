@@ -3,35 +3,16 @@
     "builds": [
         {
             "src": "server.js",
-            "use": "@now/node-server"
+            "use": "@vercel/node"
         }
     ],
-    "functions": {
-        "api/**/*": {
-            "memory": 512,
-            "runtime": "node@14.x"
-        }
-    },
     "routes": [
         {
-            "src": "/api/scan",
-            "dest": "/api/scan"
-        },
-        {
-            "src": "/api/uploadToCloud",
-            "dest": "/api/uploadToCloud"
-        },
-        {
-            "src": "/api/displayCloudData",
-            "dest": "/api/displayCloudData"
-        },
-        {
-            "src": "/api/delete",
-            "dest": "/api/delete"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/"
+            "src": "/api/(.*)",
+            "dest": "server.js"
         }
-    ]
+    ],
+    "env": {
+        "MONGODB_URI": "mongodb+srv://psilwal50:S2EhyyJcIb88hEW6@assignment.lhchzfr.mongodb.net/Assignment2"
+    }
 }
