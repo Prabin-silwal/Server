@@ -2,7 +2,7 @@
   "name": "assignment2",
   "version": "1.0.0",
   "description": "This is assignment 2. I will be developing server and database using Nodejs, Express and MongoDB Atlas. This program is developed by prabin silwal. Student ID:12195019",
-  "main": "API/server.js",
+  "main": "server.js",
   "engines": {
     "node": "14.x"
   },

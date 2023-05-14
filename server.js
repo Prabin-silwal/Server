@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const cors = require('cors');
 const { default: mongoose } = require('mongoose');
 const bodyParser = require('body-parser');
@@ -10,11 +11,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // url for the database
-const uri = "mongodb+srv://psilwal50:S2EhyyJcIb88hEW6@assignment.lhchzfr.mongodb.net/Assignment2";
+// const uri = "mongodb+srv://psilwal50:S2EhyyJcIb88hEW6@assignment.lhchzfr.mongodb.net/Assignment2";
 
 // mongodb connection
 const MongoClient = require('mongodb').MongoClient;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true  });
+const client = new MongoClient(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true  });
 // body-parser
 client.connect()
   .then(() => {
@@ -100,3 +101,4 @@ app.delete('/api/delete', async (req, res) => {
     await client.close();
   }
 });
+module.exports = app
