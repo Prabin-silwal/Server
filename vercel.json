@@ -1,8 +1,15 @@
 {
+    "version": 2,
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@now/node-server"
+        }
+    ],
     "functions": {
         "api/**/*": {
             "memory": 512,
-            "runtime": "nodejs16"
+            "runtime": "node@14.x"
         }
     },
     "routes": [
