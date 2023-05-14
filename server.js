@@ -101,4 +101,4 @@ app.delete('/api/delete', async (req, res) => {
     await client.close();
   }
 });
-module.exports = app
+module.exports = app;
