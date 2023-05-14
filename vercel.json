@@ -1,8 +1,30 @@
 {
+    "functions": {
+        "api/**/*": {
+            "memory": 512,
+            "runtime": "nodejs16"
+        }
+    },
     "routes": [
         {
-            "src": "/api/(.*)",
-            "dest": "/server.js"
+            "src": "/api/scan",
+            "dest": "/api/scan"
+        },
+        {
+            "src": "/api/uploadToCloud",
+            "dest": "/api/uploadToCloud"
+        },
+        {
+            "src": "/api/displayCloudData",
+            "dest": "/api/displayCloudData"
+        },
+        {
+            "src": "/api/delete",
+            "dest": "/api/delete"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/"
         }
     ]
 }
