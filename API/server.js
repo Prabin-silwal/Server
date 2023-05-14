@@ -3,10 +3,10 @@ const cors = require('cors');
 const { default: mongoose } = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
-const port = process.env || 8000;
-
+const port = 8000;
+// const { v4 } = require('uuid');
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // url for the database
@@ -30,6 +30,19 @@ client.connect()
   });
 
  // routes
+ app.get('/api', (req, res) => {
+
+  const path = `/api/item/${v4()}`;
+
+  res.setHeader('Content-Type', 'text/html');
+
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+
+  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
+
+});
+
+
 app.get('/api', (req, res) => {
   res.send('Hello World!');
 });
